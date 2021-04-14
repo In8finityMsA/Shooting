@@ -1,0 +1,35 @@
+﻿<Page x:Class="Shooting.ShootingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shooting"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Shooting">
+    <DockPanel Width="Auto" Height="Auto">
+        <Border BorderBrush="Black" BorderThickness="1">
+            <StackPanel MinWidth="150" MaxWidth="200" DockPanel.Dock="Left" Background="LightGray" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="lblHits" FontSize="18">Successful hits:</Label>
+                    <Label x:Name="lblNumHits" FontSize="18">0</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblMissed" FontSize="18">Missed:</Label>
+                <Label x:Name="lblNumMissed" FontSize="18">0</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblLeft" FontSize="18">Shots left:</Label>
+                <Label x:Name="lblNumLeft" FontSize="18">0</Label>
+            </StackPanel>
+        </StackPanel>
+        </Border>
+        <Viewbox x:Name="view" DockPanel.Dock="Left" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" MinHeight="50" MinWidth="50">
+            <Grid x:Name="gridView" DockPanel.Dock="Left" Background="Transparent" MouseDown="GridView_MouseDown" Loaded="gridView_Loaded" >
+                <Path Width="Auto" Height="Auto" x:Name="pathMissed"></Path>
+                <!--<Viewbox x:Name="view"></Viewbox>-->
+            </Grid>
+        </Viewbox>
+    </DockPanel>
+
+</Page>
